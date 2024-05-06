@@ -1,0 +1,13 @@
+services:
+  jupyter:
+    build: .
+    image: eda_nba_project
+    container_name: eda_nba
+    volumes:
+      - ./data:/app/data
+    env_file:
+      - ./.env_file
+    ports:
+      - "8888:8888"
+    command:
+      - /start
